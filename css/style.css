@@ -37,3 +37,10 @@ html {
 .parallax-slider {
 	    filter: blur(3px);
 }
+.shop-category {
+	display: flex;
+    flex-direction: column;
+}
+.shop-category .title {
+	text-align: center;
+}
