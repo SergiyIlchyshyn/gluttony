@@ -15,10 +15,23 @@ img {
 }
 .header {
 	min-height: 100vh;
-	/* background: url(../video/head-img.jpg) no-repeat center;
+	/* background: url(../img/forest.jpg) no-repeat center;
 	background-size: cover; */
 	margin: 0;
 }
-.wrap-bock {
-
+.head-block {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.logo img {
+	max-width: 200px;
+}
+.logo-title h1 {
+	font-size: 3.5rem;
+	color: #ffffff;
+	text-transform: uppercase;
+}
+.parallax-slider {
+	    filter: blur(2px);
 }
