@@ -7,7 +7,9 @@ img {
 	max-width: 100%;
 	height: auto;
 }
-
+html {
+	font-family: 'Roboto', sans-serif;
+}
 .header-main {
 	padding: 0;
 	margin: 0;
@@ -33,5 +35,5 @@ img {
 	text-transform: uppercase;
 }
 .parallax-slider {
-	    filter: blur(2px);
+	    filter: blur(3px);
 }

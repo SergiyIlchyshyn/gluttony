@@ -53,7 +53,7 @@ window.onload = function () {
 		let out = '';
 		for (let key in data) {
 			if (data[key]['gsx$show']['$t'] != 0) {
-				out += `<div class="col-12 col-sm-6 col-md-4 col-lg-3">`;
+				out += `<div class="col-12 col-sm-6 col-md-4 col-lg-3 filter">`;
 				out += `<div class="card mb-4 shadow-sm goods">`;
 				out += `	<img class="card-img-top" src="${data[key]['gsx$image']['$t']}" alt="">`;
 				out += `	<div class="card-body text-center">`;
@@ -71,6 +71,15 @@ window.onload = function () {
 
 	document.onclick = function (e) {
 		if (e.target.attributes.name != undefined) {
+			if (e.target.attributes.name.nodeValue == 'categoty__btn') {
+				let category = e.target.getAttribute('data-filter');
+				if (category == 'all') {
+					document.querySelector('.filter').show('300');
+				} else {
+					document.querySelector('.filter').not('.' + category).hide('300');
+					document.querySelector('.filter').filter('.' + category).show('300');
+				}
+			}
 			if (e.target.attributes.name.nodeValue == 'add-to-cart') {
 				addToCart(e.target.attributes.data.nodeValue);
 			}
