@@ -119,7 +119,7 @@ window.onload = function () {
 				.then(function (res) {
 					console.log(res);
 					if (res) {
-						alert('Ваше замовлення надіслано!');
+						alert('Ваше замовлення обробляється, чекайте дзвінка!');
 					}
 					else {
 						alert('Помилка при замовлені!');
