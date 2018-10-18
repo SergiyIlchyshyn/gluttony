@@ -111,20 +111,20 @@ window.onload = function () {
 				};
 				emailArray();
 
-				fetch("php_mail/mail.php",
-				{
-					method: "POST",
-					body: JSON.stringify(data)
-				})
-				.then(function (res) {
-					console.log(res);
-					if (res) {
-						alert('Ваше замовлення обробляється, чекайте дзвінка!');
-					}
-					else {
-						alert('Помилка при замовлені!');
-					}
-				})
+				// fetch("php_mail/mail.php",
+				// {
+				// 	method: "POST",
+				// 	body: JSON.stringify(data)
+				// })
+				// .then(function (res) {
+				// 	console.log(res);
+				// 	if (res) {
+				// 		alert('Ваше замовлення обробляється, чекайте дзвінка!');
+				// 	}
+				// 	else {
+				// 		alert('Помилка при замовлені!');
+				// 	}
+				// })
 			}
 		}
 		return false;
@@ -216,6 +216,7 @@ window.onload = function () {
 
 	}
 	// ==================================
+	
 }
 
 

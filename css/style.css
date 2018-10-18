@@ -70,7 +70,10 @@ html, body {
 .head-block {
 	display: flex;
 	justify-content:space-between;
-	align-items: center;
+    align-items: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1.5rem;
 }
 .head-slogan {
     text-align: center;
@@ -83,7 +86,7 @@ html, body {
     font-size: 4rem;
 }
 .logo img {
-	max-width: 200px;
+	max-width: 150px;
 }
 .logo-title h1 {
 	font-size: 3.5rem;
@@ -93,14 +96,11 @@ html, body {
     text-shadow: 1px 2px 0px #fff, 5px 5px 0px rgba(0,0,0,0.15);
 }
 .parallax-slider {
-	    filter: blur(3px);
+	    filter: blur(1.5px);
 }
 .shop-category {
 	display: flex;
     flex-direction: column;
-}
-.shop-category .title {
-	text-align: center;
 }
 .basket-box {
     padding: 3rem;
@@ -117,15 +117,53 @@ html, body {
     font-weight: bold;
     font-size: 1.5rem;
 }
-footer {
-    
+.footer-box {
+    display: flex;
+}
+.contacts {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+}
+.contacts__info {
+    display: flex;
+}
+.contacts__info div {
+    flex: 1;
+}
+.social-icons a {
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.social-icons i {
+    color: #000;
+    font-size: 2rem;
+    transition: .3s;
+}
+.social-icons i:hover {
+    color: #FF3400;
 }
 #map {
-	width: 100%;
+    flex: 1;
 	height: 400px;
 }
 
-
+@media (max-width: 992px) {
+    .contacts__info {
+        flex-direction: column;
+    }
+}
+@media (max-width: 768px) {
+    .footer-box {
+        flex-direction: column;
+    }
+    #map {
+        order: -1;
+        margin-bottom: 10px;
+    }
+}
 @media (max-width: 576px) {
 	.head-block {
 		flex-direction: column;
@@ -135,7 +173,24 @@ footer {
 		padding-top: 2rem;
 		font-size: 2rem;
     }
+    .head-block {
+        padding-top: 1rem;
+    }
+    .head-slogan {
+        padding: 2rem;
+    }
     .head-slogan h3 {
         font-size: 3rem;
+    }
+}
+@media (min-width: 1280px) {
+    .head-slogan {
+        padding-top: 5rem;
+    }
+    .head-slogan h3 {
+        font-size: 5rem;
+    }
+    .logo img {
+        max-width: 220px
     }
 }

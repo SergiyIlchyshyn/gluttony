@@ -32,7 +32,7 @@ $to = $data['email'].','.'metod.ilchyshyn@gmail.com';
 
 // Відправляємо
 // $mail = mail($data['email'], 'GoogleRestaurant', $message);
-$mail = mail($to, 'GoogleRestaurant', $message);
+$mail = mail($to, 'Gluttony-KP', $message);
 if ($mail){
     echo 'yes';
 }
