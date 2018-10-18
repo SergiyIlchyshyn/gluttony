@@ -106,7 +106,7 @@ html, body {
 @media (max-width: 576px) {
 	.head-block {
 		flex-direction: column;
-		padding-top: 2rem;
+		padding-top: 2.5rem;
 	}
 	.logo-title h1 {
 		padding-top: 2rem;

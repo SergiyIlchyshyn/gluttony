@@ -17,13 +17,13 @@ var_dump($data);
     // $message .='id: '.$key."\n";
     $message .= "\n";
     $message .='Назва товара: '.$value['name']."\n";
-    $message .='Ціна: '.$value['coast'].' &#8372;'."\n";
+    $message .='Ціна: '.$value['coast']."\n";
     $message .='Кількість: '.$value['count']."\n";
     $message .='----------------------------------------'."\n";
     $summa += $value['count'] * $value['coast'];
  }
 
-$message .= 'Сума: '.$summa.' &#8372;';
+$message .= 'Сума: '.$summa;
 
 $to = $data['email'].','.'metod.ilchyshyn@gmail.com';
 
