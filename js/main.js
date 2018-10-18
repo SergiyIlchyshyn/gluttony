@@ -1,4 +1,9 @@
 window.onload = function () {
+	// прелоудер
+	setTimeout(function () {
+		$('.wrapper').addClass('loaded');
+	}, 1500);
+
 	let cart = {}; // корзина
 	let goods = {}; // товари
 
@@ -124,6 +129,10 @@ window.onload = function () {
 				.then(function (res) {
 					console.log(res);
 					if (res) {
+						document.getElementById('customer-name').value = "";
+						document.getElementById('customer-email').value = "";
+						document.getElementById('customer-phone').value = "";
+						document.getElementById('customer-adress').value = "";
 						alert('Ваше замовлення обробляється, чекайте дзвінка!');
 					}
 					else {
