@@ -69,17 +69,29 @@ html, body {
 }
 .head-block {
 	display: flex;
-	justify-content: space-around;
+	justify-content:space-between;
 	align-items: center;
+}
+.head-slogan {
+    color: #ffffff;
+    text-align: center;
+    font-size: 4rem;
+    padding: 4rem;
+    color: #FFCF9C;
+}
+.head-slogan span {
+    text-shadow: #474747 3px 5px 2px;
+    font-weight: bold;
 }
 .logo img {
 	max-width: 200px;
 }
 .logo-title h1 {
 	font-size: 3.5rem;
-	color: #ffffff;
+	color: #000000;
     text-transform: uppercase;
     font-weight: bold;
+    text-shadow: 1px 2px 0px #fff, 5px 5px 0px rgba(0,0,0,0.15);
 }
 .parallax-slider {
 	    filter: blur(3px);
@@ -94,13 +106,18 @@ html, body {
 .basket-box {
     padding: 3rem;
 }
+
+.card {
+    border-radius: 15px;
+}
+.card-img-top {
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+}
 .cart-sum {
     font-weight: bold;
     font-size: 1.5rem;
 }
-
-
-
 
 
 @media (max-width: 576px) {
@@ -111,5 +128,8 @@ html, body {
 	.logo-title h1 {
 		padding-top: 2rem;
 		font-size: 2rem;
-	}
+    }
+    .head-slogan span {
+        font-size: 3rem;
+    }
 }
