@@ -1,6 +1,6 @@
 window.onload = function () {
 	let cart = {}; // корзина
-	let goods = {};
+	let goods = {}; // товари
 
 	// завантаження кошика із localStorage
 	function loadCartFromStorage() {
@@ -10,7 +10,7 @@ window.onload = function () {
 		console.log(cart);
 	}
 	loadCartFromStorage();
-
+	// ==================================
 	// послать запрос
 	let getJSON = function (url, callback) {
 		// 1. Создаём новый объект XMLHttpRequest
@@ -33,7 +33,6 @@ window.onload = function () {
 		// 3. Отсылаем запрос
 		xhr.send();
 	}
-
 	getJSON('http://spreadsheets.google.com/feeds/list/1gbLFBNrY1uC27_3qdXmx4gelQXe3EzCDWf9j6fbEOLQ/od6/public/values?alt=json', function (err, data) {
 		console.log(data);
 		if (err !== null) {
@@ -46,9 +45,10 @@ window.onload = function () {
 			console.log(goods);
 			document.querySelector('.shop-field').innerHTML = showGoods(data);
 			showCart(); // показуємо кошик
+			
 		}
 	});
-
+	// ==================================
 	function showGoods(data) {  // відображає товари
 		let out = '';
 		for (let key in data) {
@@ -58,7 +58,7 @@ window.onload = function () {
 				out += `	<img class="card-img-top" src="${data[key]['gsx$image']['$t']}" alt="">`;
 				out += `	<div class="card-body text-center">`;
 				out += `		<h5 class="card-title">${data[key]['gsx$name']['$t']}</h5>`;
-				out += `		<p class="coast">Ціна: ${data[key]['gsx$coast']['$t']}</p>`;
+				out += `		<p class="coast">Ціна: ${data[key]['gsx$coast']['$t']}  &#8372;</p>`;
 				out += `		<p class="coast">Кількість: ${data[key]['gsx$kg']['$t']}</p>`;
 				out += `		<p class="coast"><button type="button" class="btn btn-success" name="add-to-cart" data="${data[key]['gsx$id']['$t']}">Купити</button></p>`;
 				out += `	</div>`;
@@ -68,18 +68,9 @@ window.onload = function () {
 		}
 		return out;
 	}
-
+	// ==================================
 	document.onclick = function (e) {
 		if (e.target.attributes.name != undefined) {
-			if (e.target.attributes.name.nodeValue == 'categoty__btn') {
-				let category = e.target.getAttribute('data-filter');
-				if (category == 'all') {
-					document.querySelector('.filter').show('300');
-				} else {
-					document.querySelector('.filter').not('.' + category).hide('300');
-					document.querySelector('.filter').filter('.' + category).show('300');
-				}
-			}
 			if (e.target.attributes.name.nodeValue == 'add-to-cart') {
 				addToCart(e.target.attributes.data.nodeValue);
 			}
@@ -115,6 +106,7 @@ window.onload = function () {
 					name: document.getElementById('customer-name').value,
 					email: document.getElementById('customer-email').value,
 					phone: document.getElementById('customer-phone').value,
+					adress: document.getElementById('customer-adress').value,
 					cart: emailArray()
 				};
 				emailArray();
@@ -137,6 +129,31 @@ window.onload = function () {
 		}
 		return false;
 	}
+	// ==================================
+	// додаємо active до кнопок категорій
+	let btns = document.querySelectorAll("#btnContainer .categoty__btn");
+	// Loop through the buttons and add the active class to the current/clicked button
+	for (let i = 0; i < btns.length; i++) {
+		btns[i].addEventListener("click", function () {
+			let current = document.getElementsByClassName("active");
+			current[0].className = current[0].className.replace(" active", "");
+			this.className += " active";
+		});
+	}
+	
+
+	// for (let i = 0; i < btns.length; i++) {
+	// 	btns[i].addEventListener("click", function () {
+	// 		let category = btns[i].getAttribute('data-filter');
+	// 		console.log(category);
+	// 		for (let key in data) {
+	// 			if (data[key]['gsx$category']['$t'] == category) {
+	// 				document.getElementsByClassName('filter').style.display = 'none';
+	// 			}
+	// 		}
+	// 	});
+	// }
+	// ==================================
 	function emailArray() {
 		let emailArray = {};
 		// console.log("cart = ", cart);
@@ -152,6 +169,7 @@ window.onload = function () {
 		console.log(emailArray);
 		return emailArray;
 	}
+	// ==================================
 	function addToCart(elem) {			// додаємо в кошик
 		if (cart[elem] !== undefined) {
 			cart[elem]++;
@@ -162,6 +180,7 @@ window.onload = function () {
 		showCart();
 		localStorage.setItem('cart', JSON.stringify(cart))
 	}
+	// ==================================
 	function arrayHelper(arr) { // для кращого відображення товарів
 		let out = {};
 		for (let i = 0; i < arr.length; i++) {
@@ -171,10 +190,12 @@ window.onload = function () {
 			temp['category'] = arr[i]['gsx$category']['$t'];
 			temp['coast'] = arr[i]['gsx$coast']['$t'];
 			temp['image'] = arr[i]['gsx$image']['$t'];
+			temp['description'] = arr[i]['gsx$description']['$t'];
 			out[arr[i]['gsx$id']['$t']] = temp;
 		}
 		return out;
 	}
+	// ==================================
 	function showCart() {			// відображаємо кошик 
 		let ul = document.querySelector('.cart');
 		ul.innerHTML = '';
@@ -185,15 +206,16 @@ window.onload = function () {
 			li += ` <button type="button" class="btn btn-outline-secondary" name="minus-goods" data="${key}">-</button>` + ' ';
 			li += cart[key] + ' шт ';
 			li += ` <button type="button" class="btn btn-outline-secondary" name="plus-goods" data="${key}">+</button>` + ' ';
-			li += goods[key]['coast'] * cart[key] + ' $';
+			li += goods[key]['coast'] * cart[key] + ' &#8372;';
 			li += ` <button type="button" class="btn btn-outline-secondary" name="delete-goods" data="${key}">X</button>`;
 			li += '</li>';
 			sum += goods[key]['coast'] * cart[key];
 			ul.innerHTML += li;
 		}
-		ul.innerHTML += 'Разом: ' + sum + ' $';
+		ul.innerHTML += '<span class="cart-sum">Разом: ' + sum + ' &#8372;</span>';
 
 	}
+	// ==================================
 }
 
 

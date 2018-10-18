@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<!-- favicon.ico -->
-	<link rel="shortcut icon" type="image/x-icon" href="img/favicon/">
+	<link rel="shortcut icon" type="image/x-icon" href="img/favicon/favicon.png">
 </head>
 <body>
 	<!-- HEADER -->
@@ -28,11 +28,12 @@
 			<div class="shop-category">
 				<div class="title"><h2>Меню ресторана</h2></div>
 				<nav class="category__filter">
-					<ul>
-						<li class="btn btn-outline-secondary categoty__btn" data-filter="all">Всі</li>
-						<li class="btn btn-outline-secondary categoty__btn" data-filter="food01">1 страва</li>
-						<li class="btn btn-outline-secondary categoty__btn" data-filter="food02">2 страва</li>
-						<li class="btn btn-outline-secondary categoty__btn" data-filter="food03 ">3 страва</li>
+					<ul id="btnContainer">
+						<li class="btn btn-outline-secondary categoty__btn active" data-filter="all">Всі</li>
+						<li class="btn btn-outline-secondary categoty__btn" data-filter="food01">Перші страви</li>
+						<li class="btn btn-outline-secondary categoty__btn" data-filter="food02">Другі страви</li>
+						<li class="btn btn-outline-secondary categoty__btn" data-filter="food03">Гарніри</li>
+						<li class="btn btn-outline-secondary categoty__btn" data-filter="food04">Десерти</li>
 					</ul>
 				</nav>
 			</div>
@@ -43,30 +44,31 @@
 	</section>
 	<!-- END SHOP -->
 	<!-- Кошик -->
-	<div class="container">
+	<div class="container basket-box">
 		<div class="row">
 			<div class="col-lg-12">
-				<hr>
 				<h5 class="text-center">Кошик:</h5>
 				<ul class="cart">
 		
 				</ul>
-				<hr>
 			</div>
 			<div class="col-lg-12">
 				<form>
 					<div class="form-group">
-						<label for="customer-name">Your name:</label>
-						<input type="text" class="form-control" id="customer-name" placeholder="Ivan Ivanov" required>
+						<label for="customer-name">Ім'я та прізвище:</label>
+						<input type="text" class="form-control" id="customer-name" placeholder="Іван Іванов">
 					</div>
 					<div class="form-group">
-						<label for="customer-email">Email address:</label>
-						<input type="email" class="form-control" id="customer-email" placeholder="email@domain.com" required />
+						<label for="customer-email">Email:</label>
+						<input type="email" class="form-control" id="customer-email" placeholder="email@domain.com">
 					</div>
 					<div class="form-group">
-						<label for="customer-phone">Phone:</label>
-						<input type="tel" class="form-control" id="customer-phone" placeholder="380977755556" pattern="[0-9]{3}-[0-9]{4}-[0-9]{5}"
-							minlength="9" maxlength="12" required>
+						<label for="customer-phone">Телефон:</label>
+						<input type="tel" class="form-control" id="customer-phone" placeholder="380977755556" minlength="9" maxlength="12">
+					</div>
+					<div class="form-group">
+						<label for="customer-adress">Ваша адреса:</label>
+						<input type="text" class="form-control" id="customer-adress" placeholder="в. Лесі Українки, 7, кв. 7">
 					</div>
 					<button type="submit" class="btn btn-primary" id="buy" name="buy">Купити</button>
 				</form>

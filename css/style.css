@@ -1,45 +1,45 @@
 @font-face {
-    font-family: 'Niramit';
-    src: url('../fonts/Niramit-Light.eot');
-    src: url('../fonts/Niramit-Light.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/Niramit-Light.woff2') format('woff2'),
-        url('../fonts/Niramit-Light.woff') format('woff'),
-        url('../fonts/Niramit-Light.ttf') format('truetype'),
-        url('../fonts/Niramit-Light.svg#Niramit-Light') format('svg');
-    font-weight: 300;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Niramit';
-    src: url('../fonts/Niramit-Bold.eot');
-    src: url('../fonts/Niramit-Bold.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/Niramit-Bold.woff2') format('woff2'),
-        url('../fonts/Niramit-Bold.woff') format('woff'),
-        url('../fonts/Niramit-Bold.ttf') format('truetype'),
-        url('../fonts/Niramit-Bold.svg#Niramit-Bold') format('svg');
+    font-family: 'K2D';
+    src: url('../fonts/K2D-Bold.eot');
+    src: url('../fonts/K2D-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/K2D-Bold.woff2') format('woff2'),
+        url('../fonts/K2D-Bold.woff') format('woff'),
+        url('../fonts/K2D-Bold.ttf') format('truetype'),
+        url('../fonts/K2D-Bold.svg#K2D-Bold') format('svg');
     font-weight: bold;
     font-style: normal;
 }
 @font-face {
-    font-family: 'Niramit';
-    src: url('../fonts/Niramit-Regular.eot');
-    src: url('../fonts/Niramit-Regular.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/Niramit-Regular.woff2') format('woff2'),
-        url('../fonts/Niramit-Regular.woff') format('woff'),
-        url('../fonts/Niramit-Regular.ttf') format('truetype'),
-        url('../fonts/Niramit-Regular.svg#Niramit-Regular') format('svg');
+    font-family: 'K2D';
+    src: url('../fonts/K2D-Regular.eot');
+    src: url('../fonts/K2D-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/K2D-Regular.woff2') format('woff2'),
+        url('../fonts/K2D-Regular.woff') format('woff'),
+        url('../fonts/K2D-Regular.ttf') format('truetype'),
+        url('../fonts/K2D-Regular.svg#K2D-Regular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
-    font-family: 'Niramit';
-    src: url('../fonts/Niramit-SemiBold.eot');
-    src: url('../fonts/Niramit-SemiBold.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/Niramit-SemiBold.woff2') format('woff2'),
-        url('../fonts/Niramit-SemiBold.woff') format('woff'),
-        url('../fonts/Niramit-SemiBold.ttf') format('truetype'),
-        url('../fonts/Niramit-SemiBold.svg#Niramit-SemiBold') format('svg');
+    font-family: 'K2D';
+    src: url('../fonts/K2D-SemiBold.eot');
+    src: url('../fonts/K2D-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/K2D-SemiBold.woff2') format('woff2'),
+        url('../fonts/K2D-SemiBold.woff') format('woff'),
+        url('../fonts/K2D-SemiBold.ttf') format('truetype'),
+        url('../fonts/K2D-SemiBold.svg#K2D-SemiBold') format('svg');
     font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'K2D';
+    src: url('../fonts/K2D-Light.eot');
+    src: url('../fonts/K2D-Light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/K2D-Light.woff2') format('woff2'),
+        url('../fonts/K2D-Light.woff') format('woff'),
+        url('../fonts/K2D-Light.ttf') format('truetype'),
+        url('../fonts/K2D-Light.svg#K2D-Light') format('svg');
+    font-weight: 300;
     font-style: normal;
 }
 /* END FONTS */
@@ -54,7 +54,7 @@ img {
 	height: auto;
 }
 html, body {
-	font-family: 'Niramit', sans-serif!important;
+	font-family: 'K2D', sans-serif!important;
 }
 .header-main {
 	padding: 0;
@@ -78,7 +78,8 @@ html, body {
 .logo-title h1 {
 	font-size: 3.5rem;
 	color: #ffffff;
-	text-transform: uppercase;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 .parallax-slider {
 	    filter: blur(3px);
@@ -90,6 +91,17 @@ html, body {
 .shop-category .title {
 	text-align: center;
 }
+.basket-box {
+    padding: 3rem;
+}
+.cart-sum {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+
+
+
 
 @media (max-width: 576px) {
 	.head-block {

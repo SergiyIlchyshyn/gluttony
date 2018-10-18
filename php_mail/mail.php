@@ -6,6 +6,7 @@ var_dump($data);
 // Повідомлення
  $message  = 'Клієнт: '.$data['name']."\n";
  $message .= 'Телефон: '.$data['phone']."\n";
+ $message .= 'Адреса: '.$data['adress']."\n";
  $message .= ">>>>>>>>>>>>>>>>>>>>>>>>>>";
  
  // $key - id товару
