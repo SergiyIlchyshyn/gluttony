@@ -55,7 +55,12 @@ window.onload = function () {
 			if (data[key]['gsx$show']['$t'] != 0) {
 				out += `<div class="col-12 col-sm-6 col-md-4 col-lg-3 filter">`;
 				out += `<div class="card mb-4 shadow-sm goods">`;
-				out += `	<img class="card-img-top" src="${data[key]['gsx$image']['$t']}" alt="">`;
+				out += `	<div class="card-top">`;
+				out += `		<img class="card-img-top" src="${data[key]['gsx$image']['$t']}" alt="">`;
+				out += `		<div class="overlay">`;
+				out += `			<div class="overlay-text">${data[key]['gsx$description']['$t']}</div>`;
+				out += `		</div>`;
+				out += `	</div>`;
 				out += `	<div class="card-body text-center">`;
 				out += `		<h5 class="card-title">${data[key]['gsx$name']['$t']}</h5>`;
 				out += `		<p class="coast">Ціна: ${data[key]['gsx$coast']['$t']}  &#8372;</p>`;
@@ -111,20 +116,20 @@ window.onload = function () {
 				};
 				emailArray();
 
-				// fetch("php_mail/mail.php",
-				// {
-				// 	method: "POST",
-				// 	body: JSON.stringify(data)
-				// })
-				// .then(function (res) {
-				// 	console.log(res);
-				// 	if (res) {
-				// 		alert('Ваше замовлення обробляється, чекайте дзвінка!');
-				// 	}
-				// 	else {
-				// 		alert('Помилка при замовлені!');
-				// 	}
-				// })
+				fetch("php_mail/mail.php",
+				{
+					method: "POST",
+					body: JSON.stringify(data)
+				})
+				.then(function (res) {
+					console.log(res);
+					if (res) {
+						alert('Ваше замовлення обробляється, чекайте дзвінка!');
+					}
+					else {
+						alert('Помилка при замовлені!');
+					}
+				})
 			}
 		}
 		return false;
@@ -163,6 +168,7 @@ window.onload = function () {
 			temp.name = goods[key]['name'];
 			temp.coast = goods[key]['coast'];
 			temp.articul = goods[key]['articul'];
+			temp.description = goods[key]['description'];
 			temp.count = cart[key];
 			emailArray[key] = temp;
 		}

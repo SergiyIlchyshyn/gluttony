@@ -17,6 +17,7 @@ var_dump($data);
     // $message .='id: '.$key."\n";
     $message .= "\n";
     $message .='Назва товара: '.$value['name']."\n";
+    $message .='Склад: '.$value['description']."\n";
     $message .='Ціна: '.$value['coast']."\n";
     $message .='Кількість: '.$value['count']."\n";
     $message .='----------------------------------------'."\n";
