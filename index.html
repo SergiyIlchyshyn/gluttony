@@ -71,20 +71,20 @@
 					<form name="myForm" method="POST">
 						<div class="form-group">
 							<label for="customer-name">Ім'я та прізвище:</label>
-							<input type="text" class="form-control" id="customer-name" name="Name" placeholder="Іван Іванов">
+							<input type="text" class="form-control" id="customer-name" name="Name" placeholder="Іван Іванов" required>
 						</div>
 						<div class="form-group">
 							<label for="customer-email">Email:</label>
-							<input type="email" class="form-control" id="customer-email" name="Email" placeholder="email@domain.com">
+							<input type="email" class="form-control" id="customer-email" name="Email" placeholder="email@domain.com" required>
 						</div>
 						<div class="form-group">
 							<label for="customer-phone">Телефон:</label>
 							<input type="tel" class="form-control" id="customer-phone" name="Phone" placeholder="380977755556" minlength="9"
-							 maxlength="12">
+							 maxlength="12" required>
 						</div>
 						<div class="form-group">
 							<label for="customer-adress">Ваша адреса:</label>
-							<input type="text" class="form-control" id="customer-adress" name="Adress" placeholder="в. Лесі Українки, 7, кв. 7">
+							<input type="text" class="form-control" id="customer-adress" name="Adress" placeholder="в. Лесі Українки, 7, кв. 7" required>
 						</div>
 						<input type="submit" value="Купити" class="btn btn-primary" id="buy" name="buy">
 					</form>
