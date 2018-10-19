@@ -268,7 +268,20 @@ html, body {
     font-size: 0.625rem;
     text-transform: uppercase;
 }
-
+.cart {
+    list-style: none;
+}
+.cart > li {
+    border: 1px solid;
+    margin-bottom: 5px;
+    padding: 2px;
+    border-radius: 5px;
+}
+.cart-item {
+    font-weight: bold;
+    display: inline-block;
+    min-width: 200px;
+}
 .cart-sum {
     font-weight: bold;
     font-size: 1.5rem;

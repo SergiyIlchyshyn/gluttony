@@ -145,26 +145,13 @@ window.onload = function () {
 	}
 	// ==================================
 	// додаємо active до кнопок категорій
-	let btns = document.querySelectorAll("#btnContainer .categoty__btn");
-	// Loop through the buttons and add the active class to the current/clicked button
-	for (let i = 0; i < btns.length; i++) {
-		btns[i].addEventListener("click", function () {
-			let current = document.getElementsByClassName("active");
-			current[0].className = current[0].className.replace(" active", "");
-			this.className += " active";
-		});
-	}
-	
-
+	// let btns = document.querySelectorAll("#btnContainer .categoty__btn");
+	// // Loop through the buttons and add the active class to the current/clicked button
 	// for (let i = 0; i < btns.length; i++) {
 	// 	btns[i].addEventListener("click", function () {
-	// 		let category = btns[i].getAttribute('data-filter');
-	// 		console.log(category);
-	// 		for (let key in data) {
-	// 			if (data[key]['gsx$category']['$t'] == category) {
-	// 				document.getElementsByClassName('filter').style.display = 'none';
-	// 			}
-	// 		}
+	// 		let current = document.getElementsByClassName("active");
+	// 		current[0].className = current[0].className.replace(" active", "");
+	// 		this.className += " active";
 	// 	});
 	// }
 	// ==================================
@@ -216,8 +203,8 @@ window.onload = function () {
 		ul.innerHTML = '';
 		let sum = 0;
 		for (let key in cart) {
-			let li = '<li>';
-			li += goods[key]['name'] + ' ';
+			let li = '<li><span class="cart-item">';
+			li += goods[key]['name'] + '</span> ';
 			li += ` <button type="button" class="btn btn-outline-secondary" name="minus-goods" data="${key}">-</button>` + ' ';
 			li += cart[key] + ' шт ';
 			li += ` <button type="button" class="btn btn-outline-secondary" name="plus-goods" data="${key}">+</button>` + ' ';
